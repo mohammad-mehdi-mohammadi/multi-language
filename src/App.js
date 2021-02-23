@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom';
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import {LocaleContext} from "./_modules/context/locale-context";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
             <div className="App">
                 <Header changeLanguage={changeLanguage}/>
                 <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route exact path='/about-me' component={Home} changeLanguage={changeLanguage}/>
+                    <Route exact path='/' component={Home} changeLanguage={changeLanguage}/>
+                    <Route exact path='/about-me' component={AboutUs} changeLanguage={changeLanguage}/>
                 </Switch>
             </div>
         </LocaleContext.Provider>

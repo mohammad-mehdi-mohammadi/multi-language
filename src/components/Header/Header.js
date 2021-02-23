@@ -12,7 +12,7 @@ const Header = (props) => {
                 <NavLink to="/" activeClassName={styles.active}>
                     Home
                 </NavLink>
-                <NavLink to="/home" activeClassName={styles.active}>
+                <NavLink to="/about-me" activeClassName={styles.active}>
                     Live Search
                 </NavLink>
             </div>
