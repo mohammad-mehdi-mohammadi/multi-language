@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const LanguagePicker = (props) => {
-    const {changeLanguage} = this.props
+    const {changeLanguage} = props
     return (
         <>
             <button id="en" onClick={changeLanguage}>ENGLISH</button>

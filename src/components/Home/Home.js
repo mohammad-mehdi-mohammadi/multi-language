@@ -1,16 +1,21 @@
 import * as React from "react";
 import styles from './Home.module.sass'
+import LanguagePicker from "../../_modules/context/LanguagePicker";
+import Translate from "../../_modules/locales/Translate";
 
-const Home = () => {
+const Home = (props) => {
 
     return (
         <>
+            <div>
+                <h1>About me</h1>
 
-
-            <div className={styles.homeArea}>
-                <h3>Welcome to Home</h3>
+                <p><Translate string={'where-i-am-from.milton-keynes'}/></p>
+                <p><Translate string={'where-i-am-from.huddersfield'}/></p>
+                <p><Translate string={'where-i-am-from.amsterdam'}/></p>
+                {/*<AboutMe />*/}
+                {/*<WhereIAmFrom />*/}
             </div>
-
         </>
     );
 }

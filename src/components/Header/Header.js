@@ -1,21 +1,22 @@
 import * as React from "react";
 import styles from './Header.module.sass'
 import {NavLink} from "react-router-dom";
+import LanguagePicker from "../../_modules/context/LanguagePicker";
 
-const Header = () => {
+const Header = (props) => {
 
     return (
         <>
-
-
+            <LanguagePicker changeLanguage={props.changeLanguage} />
             <div className={styles.headerArea}>
-                <NavLink to="/home" activeClassName={styles.active}>
+                <NavLink to="/" activeClassName={styles.active}>
                     Home
                 </NavLink>
-                <NavLink to="/live-search" activeClassName={styles.active}>
+                <NavLink to="/home" activeClassName={styles.active}>
                     Live Search
                 </NavLink>
             </div>
+
 
         </>
     );
