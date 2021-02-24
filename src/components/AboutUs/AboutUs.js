@@ -1,7 +1,9 @@
 import * as React from "react";
 import styles from './AboutUs.module.sass'
-import LanguagePicker from "../../_modules/context/LanguagePicker";
+
 import Translate from "../../_modules/locales/Translate";
+
+import {LocaleTheme} from "../../_modules/context/locale-theme";
 
 const AboutUs = (props) => {
 
@@ -9,7 +11,12 @@ const AboutUs = (props) => {
         <>
             <div>
                 <h1>About me</h1>
+                <LocaleTheme.Consumer>
+                    <div>
 
+                    </div>
+                    {value => value}
+                </LocaleTheme.Consumer>
                 <p><Translate string={'about-me.name'}/></p>
 
             </div>
