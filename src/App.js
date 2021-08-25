@@ -4,8 +4,6 @@ import {Route, Switch} from 'react-router-dom';
 
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import {LocaleContext} from "./_modules/context/locale-context";
-
 import {useTranslation} from "react-i18next";
 
 function HeaderComponent()
