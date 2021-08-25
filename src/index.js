@@ -7,9 +7,10 @@ import {I18nextProvider} from "react-i18next";
 import i18next from "i18next";
 import common_en from "./trans/en.json";
 import common_de from "./trans/de.json";
+import common_fa from "./trans/fa.json";
 i18next.init({
     interpolation: { escapeValue: false },  // React already does escaping
-    lng: 'en',                              // language to use
+    lng: 'de',                              // language to use
     resources: {
         en: {
             common: common_en               // 'common' is our custom namespace
@@ -17,16 +18,18 @@ i18next.init({
         de: {
             common: common_de
         },
+        fa: {
+            common: common_fa
+        },
     },
 });
 
 ReactDOM.render(
     <I18nextProvider i18n={i18next}>
-            <App/>
+            <BrowserRouter>
+                <App/>
+            </BrowserRouter>
         </I18nextProvider>
-    // <BrowserRouter>
-    //     <App/>
-    // </BrowserRouter>
     ,
     document.getElementById('root')
 );

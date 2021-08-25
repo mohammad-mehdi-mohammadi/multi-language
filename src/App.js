@@ -11,28 +11,29 @@ import {useTranslation} from "react-i18next";
 function HeaderComponent()
 {
     const {t, i18n} = useTranslation('common');
-    return <h1>{t('welcome.title', {framework:'React'})}</h1>
+    return <h1></h1>
 }
 function App() {
-    const [preferredLocale, setPreferredLocale] = useState('en')
+    const { i18n } = useTranslation()
+    if(i18n.dir() === 'ltr') {
 
-    const changeLanguage = ({currentTarget: {id}}) => {
-        setPreferredLocale(id)
-    };
+        import ('./assets/css/bootstrap.min.css');
+      } else {
+        import ('./assets/css/bootstrap.rtl.min.css');
+      }
     
     return (
-        <Suspense fallback="loading">
-            <div className="App">
-                <HeaderComponent/>
+        <div className="App">
+
+
+                <Header />
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                </Switch>
+
             </div>
-        </Suspense>
         // <LocaleContext.Provider value={preferredLocale}>
-        //     <div className="App">
-        //         <Header changeLanguage={changeLanguage} />
-        //         <Switch>
-        //             <Route exact path='/' component={Home} changeLanguage={changeLanguage}/>
-        //         </Switch>
-        //     </div>
+            
         // </LocaleContext.Provider>
     );
 }
